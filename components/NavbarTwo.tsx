@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
+import Image from "next/image";
 
 const navigation = [
   { name: "Last minute", href: "#" },
@@ -154,10 +155,11 @@ export default function NavbarTwo() {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
+      <Image src="/Vietnam2.jpg" layout='fill'    className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "/>
+        {/* <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="Vietnam2.jpg"
-        />
+        /> */}
       </div>
     </div>
   );
