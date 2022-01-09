@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
+    "@types/simple-react-lightbox": "^3.6.1",
     "autoprefixer": "^10.4.0",
     "fslightbox-react": "^1.6.2-2",
     "postcss": "^8.4.5",
