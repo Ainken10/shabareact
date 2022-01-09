@@ -5,7 +5,7 @@ import {
   MoonIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/outline";
-import React from "react";
+import React, { useEffect, useState } from "react";
 const lorem =
   "Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod.";
 
@@ -41,6 +41,33 @@ const items = [
 ];
 
 export default function AllTripCard() {
+  const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
+    date1 = new Date(date1);
+    date2 = new Date(date2);
+    const diffTime: any = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  };
+  let formatter = new Intl.NumberFormat("hu-HU", {
+    style: "currency",
+    currency: "HUF",
+    maximumFractionDigits: 0,
+  });
+  const [tours, setTours] = useState<any>([]);
+  useEffect(() => {
+    const res = fetch("/api/tours?skip=66&limit=4", {
+      method: "GET",
+    }).then((tourResults) =>
+      tourResults.json().then((data) => {
+        console.log("DataBIG2: ", data);
+        setTours(data.tours);
+      })
+    );
+
+    return () => {
+      console.log("clean up");
+    };
+  }, []);
   return (
     <div className="flex items-center justify-center my-40 flex-wrap mx-10 ">
       <div className="w-full flex flex-col my-5 ">
@@ -50,25 +77,32 @@ export default function AllTripCard() {
         <p className="font-bold text-5xl">Nyári kalandját</p>
       </div>
       <div className="grid sm:grid-cols-4 gap-4 ">
-        {items.map((x) => {
+        {tours.map((x :any,i:any) => {
           return (
             <div
-              key={x.name}
+              key={i}
               className="flex flex-col    border-2 cursor-pointer rounded-lg group"
             >
-              <img className="rounded-t-lg w-full" src={x.image} />
-              <div className="flex flex-col p-2 space-y-2 w- group-hover:bg-orange-400 group-hover:text-white">
-                <p className="text-2xl font-bold">{x.name}</p>
-                <div className="flex flex-col">
+              <img className="rounded-t-lg max-h-[250px] min-h-[250px] w-full" src={x.tourPhotos[0]} />
+              <div className="flex flex-col p-2 h-[150px] justify-between w- group-hover:bg-orange-400 group-hover:text-white">
+                <p className="text-2xl font-bold">{x.tourTitle}</p>
+                <div className="flex flex-col ">
                   <div className="flex items-center  space-x-1   rounded-lg">
-                    <ClockIcon className="w-5 h-5 " /> <p>10 nap</p>
-                    <MoonIcon className="w-5 h-5 " /> <p>10 éjszaka</p>
+                    <ClockIcon className="w-5 h-5 " /> <p>    {getDayDifferenceBetweenTwoDates(
+                      x.startDates[0],
+                      tours[0]?.endDates[0]
+                    )} nap</p>
+                    <MoonIcon className="w-5 h-5 " /> <p>    {getDayDifferenceBetweenTwoDates(
+                      x.startDates[0],
+                      tours[0]?.endDates[0]
+                    )-1} éjszaka</p>
                   </div>
                 </div>
-                <div className="flex space-x-4 items-center">
-                 
-                  <p className="text-lg font-semibold">{x.price} Ft </p>
-                  <p className="text-gray-300 text-sm font-semibold crossed line-through">{(x.price*1.1).toFixed(0)} Ft </p>
+                <div className="flex space-x-4 items-center ">
+                  <p className="text-lg font-semibold"> {formatter.format(x.priceFrom)}</p>
+                  <p className="text-gray-300 text-sm font-semibold crossed line-through">
+                    {formatter.format(x.priceFrom*1.1)}
+                  </p>
                 </div>
               </div>
             </div>

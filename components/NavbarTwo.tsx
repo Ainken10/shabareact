@@ -4,9 +4,9 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
+  { name: "Last minute", href: "#" },
+  { name: "Ajánlott ", href: "#" },
+  { name: "Hazai", href: "#" },
 ];
 
 export default function NavbarTwo() {
@@ -36,7 +36,7 @@ export default function NavbarTwo() {
                       <span className="sr-only">Workflow</span>
                       <img
                         className="h-8 w-auto sm:h-10"
-                        src="sabalogo/SZÖVEG_web_szín.png"
+                        src="/sabalogo/SZÖVEG_web_szín.png"
                       />
                     </a>
                     <div className="-mr-2 flex items-center md:hidden">
@@ -85,7 +85,7 @@ export default function NavbarTwo() {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src="sabalogo/SZÖVEG_web_szín.png"
+                        src="/sabalogo/SZÖVEG_web_szín.png"
                         alt=""
                       />
                     </div>
@@ -156,7 +156,7 @@ export default function NavbarTwo() {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="Vietnam2.jpg"
+          src="/Vietnam2.jpg"
         />
       </div>
     </div>
