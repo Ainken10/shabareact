@@ -10,53 +10,72 @@ export default async function handler(req: NextApiRequest, res: any) {
     let erkezesidatum = req.query.start;
     let indulasidatum = req.query.end;
 
-    console.log("queries: ",orszag," ",erkezesidatum," ",indulasidatum )
+    // console.log("queries: ",orszag," ",erkezesidatum," ",indulasidatum )
 
-    let query = { tourCountries: { $in: [orszag] },"tourPhotos.0": { $exists: true } };
+    // let query = { tourCountries: { $in: [orszag] },"tourPhotos.0": { $exists: true } };
   
-    if (
-      (indulasidatum == "" || indulasidatum === undefined) &&
-      (erkezesidatum == "" || indulasidatum === erkezesidatum)
-    ) {
-      query = { tourCountries: { $in: [orszag] }, "tourPhotos.0": { $exists: true } };
+    // if (
+    //   (indulasidatum == "" || indulasidatum === undefined) &&
+    //   (erkezesidatum == "" || indulasidatum === erkezesidatum)
+    // ) {
+    //   query = { tourCountries: { $in: [orszag] }, "tourPhotos.0": { $exists: true } };
       
-    } else if (
-      indulasidatum != "" &&
-      indulasidatum != undefined &&
-      (erkezesidatum == "" || indulasidatum === erkezesidatum)
-    ) {
-      query = {
-        tourCountries: { $in: [orszag] },
-        starDates: { $in: [indulasidatum] },
-        "tourPhotos.0": { $exists: true }
-      };
-    } else if (
-      erkezesidatum != "" &&
-      erkezesidatum != undefined &&
-      (indulasidatum == "" || indulasidatum === undefined)
-    ) {
-      query = {
-        tourCountries: { $in: [orszag] },
-        endDates: { $in: [erkezesidatum] },
-        "tourPhotos.0": { $exists: true }
-      };
-    } else if (
-      erkezesidatum != "" &&
-      erkezesidatum != undefined &&
-      indulasidatum != "" &&
-      indulasidatum != undefined
-    ) {
-      query = {
-        tourCountries: { $in: [orszag] },
-        endDates: { $in: [erkezesidatum] },
-        starDates: { $in: [indulasidatum] },
-        "tourPhotos.0": { $exists: true }
-      };
-    }
+    // } else if (
+    //   indulasidatum != "" &&
+    //   indulasidatum != undefined &&
+    //   (erkezesidatum == "" || indulasidatum === erkezesidatum)
+    // ) {
+    //   query = {
+    //     tourCountries: { $in: [orszag] },
+    //     starDates: { $in: [indulasidatum] },
+    //     "tourPhotos.0": { $exists: true }
+    //   };
+    // } else if (
+    //   erkezesidatum != "" &&
+    //   erkezesidatum != undefined &&
+    //   (indulasidatum == "" || indulasidatum === undefined)
+    // ) {
+    //   query = {
+    //     "tourCountries": { $in: [orszag] },
+       
+    //     "tourPhotos.0": { $exists: true }
+    //     "endDates": { $in: [erkezesidatum]  },
+    //   };
+    // } else if (
+    //   erkezesidatum != "" &&
+    //   erkezesidatum != undefined &&
+    //   indulasidatum != "" &&
+    //   indulasidatum != undefined
+    // ) {
+    //   query = {
+    //     tourCountries: { $in: [orszag] {,
+    //     endDates: { $in: [erkezesidatum] },
+    //     starDates: { $in: [indulasidatum] },
+    //     "tourPhotos.0": { $exists: true }
+    //   };
+    // }
+
+    const query :any= {
+      tourCountries:{},
+      // endDates:{},
+      // starDates:{},
+      "tourPhotos.0":{ $exists: true }
+     };
+
+     const tourCountries = req.query.country ? {tourCountries: { $in: [req.query.country] }} : {};
+     const endDates = req.query.end ? {endDates: { $in: [req.query.end] }  }: {};
+     const starDates = req.query.start ? {startDates: { $in: [req.query.start] }  }: {};
+     const tourPhotos = { "tourPhotos.0":{ $exists: true }};
+
+    query.tourCountries = { $in: [orszag] };
+    // query.endDates = { $in: [erkezesidatum] };
+    // query.starDates = { $in: [indulasidatum] };
+     query.tourCountries = { $exists: true };
+     console.log("hello",{...tourCountries, ...starDates, ...endDates, ...tourPhotos})
     // connect to the database
     const db = await dbConnect();
     // fetch the posts
-    const tours = await Tours.find(query)
+    const tours = await Tours.find({...tourCountries, ...starDates, ...endDates, ...tourPhotos})
       .lean()
       .select("tourPhotos")
       .select("tourTitle")
