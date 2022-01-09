@@ -78,7 +78,7 @@ export default function AllTripCard() {
         <p className="font-bold text-5xl">Nyári kalandját</p>
       </div>
       <div className="grid sm:grid-cols-4 gap-4 ">
-        {tours.map((x: any, i: any) => {
+        {tours?.map((x: any, i: any) => {
           return (
             <a
               href={`/ut/${x._id}`}

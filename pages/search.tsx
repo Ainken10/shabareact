@@ -18,7 +18,10 @@ export default function Search() {
 
   useEffect(() => {
 
-    const queryparams = `/api/search?country=${country}&start=${start}&end=${end}`;
+    let queryparams = '/api/search?' 
+    country ? queryparams += 'country='+country: null ;
+    start ?  queryparams += '&start='+start : null ;
+    end ?  queryparams += '&end='+end : null ;
     if (router.query) {
       
       const { country } = router.query;

@@ -22,12 +22,13 @@ export default function SearchBar() {
     if (pathname == "/") {
       event.preventDefault();
     }
+    let queryparams = '/search?' 
+    //${country} &start=${start}&end=${end}'
+    let country = event.target.country.value ? queryparams += 'country='+event.target.country.value: null ;
+    let start = event.target.country.start ?  queryparams += '&start='+event.target.country.start : null ;
+    let end = event.target.country.end ?  queryparams += '&end='+event.target.country.end : null ;
 
-    let country = event.target.country.value;
-    let start = event.target.country.start;
-    let end = event.target.country.vaendlue;
-
-    const queryparams = `/search?country=${country}&start=${start}&end=${end}`;
+    // const queryparams = `/search?country=${country}&start=${start}&end=${end}`;
 
     Router.push(queryparams);
   };
