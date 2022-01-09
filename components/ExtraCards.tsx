@@ -58,11 +58,11 @@ export default function ExtraCards() {
             className="w-full bg-white border-2 border-gray-100  relative flex flex-row-reverse rounded-tr-3xl rounded-bl-3xl"
           >
             <img
-              className="object-center object-cover h-72 w-72 rounded-tl-3xl absolute -inset-y-8 left-7 rounded-br-3xl"
+              className="hidden sm:block object-center object-cover h-72 w-72 rounded-tl-3xl absolute -inset-y-8 left-7 rounded-br-3xl"
               src={x.tourPhotos[0]}
             />
 
-            <div className="w-[310px]  h-72 bg-orange-100  rounded-tr-3xl flex flex-col p-5  space-y-4">
+            <div className="w-full sm:w-[310px]  h-72 bg-orange-100  rounded-tr-3xl flex flex-col p-5  space-y-4">
               <p className="font-bold text-3xl">{x.tourTitle}</p>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-3 text-orange-300 font-bold ">
