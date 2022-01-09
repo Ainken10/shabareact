@@ -12,13 +12,14 @@ export default async function handler(req: NextApiRequest, res: any) {
 
     console.log("queries: ",orszag," ",erkezesidatum," ",indulasidatum )
 
-    let query = { tourCountries: { $in: [orszag] } };
+    let query = { tourCountries: { $in: [orszag] },"tourPhotos.0": { $exists: true } };
   
     if (
       (indulasidatum == "" || indulasidatum === undefined) &&
       (erkezesidatum == "" || indulasidatum === erkezesidatum)
     ) {
-      query = { tourCountries: { $in: [orszag] } };
+      query = { tourCountries: { $in: [orszag] }, "tourPhotos.0": { $exists: true } };
+      
     } else if (
       indulasidatum != "" &&
       indulasidatum != undefined &&
@@ -27,6 +28,7 @@ export default async function handler(req: NextApiRequest, res: any) {
       query = {
         tourCountries: { $in: [orszag] },
         starDates: { $in: [indulasidatum] },
+        "tourPhotos.0": { $exists: true }
       };
     } else if (
       erkezesidatum != "" &&
@@ -36,6 +38,7 @@ export default async function handler(req: NextApiRequest, res: any) {
       query = {
         tourCountries: { $in: [orszag] },
         endDates: { $in: [erkezesidatum] },
+        "tourPhotos.0": { $exists: true }
       };
     } else if (
       erkezesidatum != "" &&
@@ -47,6 +50,7 @@ export default async function handler(req: NextApiRequest, res: any) {
         tourCountries: { $in: [orszag] },
         endDates: { $in: [erkezesidatum] },
         starDates: { $in: [indulasidatum] },
+        "tourPhotos.0": { $exists: true }
       };
     }
     // connect to the database

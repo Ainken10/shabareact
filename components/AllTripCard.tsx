@@ -51,6 +51,7 @@ export default function AllTripCard() {
   let formatter = new Intl.NumberFormat("hu-HU", {
     style: "currency",
     currency: "HUF",
+    minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
   const [tours, setTours] = useState<any>([]);
@@ -77,35 +78,52 @@ export default function AllTripCard() {
         <p className="font-bold text-5xl">Nyári kalandját</p>
       </div>
       <div className="grid sm:grid-cols-4 gap-4 ">
-        {tours.map((x :any,i:any) => {
+        {tours.map((x: any, i: any) => {
           return (
-            <div
+            <a
+              href={`/ut/${x._id}`}
               key={i}
               className="flex flex-col    border-2 cursor-pointer rounded-lg group"
             >
-              <img className="rounded-t-lg max-h-[250px] min-h-[250px] w-full" src={x.tourPhotos[0]} />
+              <img
+                className="rounded-t-lg max-h-[250px] min-h-[250px] w-full"
+                src={x.tourPhotos[0]}
+              />
               <div className="flex flex-col p-2 h-[150px] justify-between w- group-hover:bg-orange-400 group-hover:text-white">
                 <p className="text-2xl font-bold">{x.tourTitle}</p>
                 <div className="flex flex-col ">
                   <div className="flex items-center  space-x-1   rounded-lg">
-                    <ClockIcon className="w-5 h-5 " /> <p>    {getDayDifferenceBetweenTwoDates(
-                      x.startDates[0],
-                      tours[0]?.endDates[0]
-                    )} nap</p>
-                    <MoonIcon className="w-5 h-5 " /> <p>    {getDayDifferenceBetweenTwoDates(
-                      x.startDates[0],
-                      tours[0]?.endDates[0]
-                    )-1} éjszaka</p>
+                    <ClockIcon className="w-5 h-5 " />{" "}
+                    <p>
+                      {" "}
+                      {getDayDifferenceBetweenTwoDates(
+                        x.startDates[0],
+                        tours[0]?.endDates[0]
+                      )}{" "}
+                      nap
+                    </p>
+                    <MoonIcon className="w-5 h-5 " />{" "}
+                    <p>
+                      {" "}
+                      {getDayDifferenceBetweenTwoDates(
+                        x.startDates[0],
+                        tours[0]?.endDates[0]
+                      ) - 1}{" "}
+                      éjszaka
+                    </p>
                   </div>
                 </div>
                 <div className="flex space-x-4 items-center ">
-                  <p className="text-lg font-semibold"> {formatter.format(x.priceFrom)}</p>
+                  <p className="text-lg font-semibold">
+                    {" "}
+                    {formatter.format(x.priceFrom)}
+                  </p>
                   <p className="text-gray-300 text-sm font-semibold crossed line-through">
-                    {formatter.format(x.priceFrom*1.1)}
+                    {formatter.format(x.priceFrom * 1.1)}
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>

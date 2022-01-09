@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import AllTripCard from "../components/AllTripCard";
 import BigCard from "../components/BigCard";
 import CardOne from "../components/CardOne";
@@ -35,31 +36,38 @@ export default function Home() {
   }, []);
 
   const loader = (
-    <div className="w-full min-h-screen flex items-center justify-center">
+    <motion.div className="w-full min-h-screen flex items-center justify-center absolute">
       <img src="preloader.gif" />
-    </div>
+    </motion.div>
   );
 
   return (
     <>
-      {isLoading ? (
-        loader
-      ) : (
-        <>
-          <NavbarTwo />
-          <SearchBar />
-          <CardOne />
-          <IconCard />
-          <BigCard />
-          <YourNextTourCard />
-          <AllTripCard />
-          <ImageSmallGallery />
-          <ExtraCards />
-          <CardTwo tours={tours} />
-          <Contact />
-          <Footer />
-        </>
-      )}
+      <motion.div
+        initial={{ opacity: 100 }}
+        transition={{ duration: 3 }}
+        animate={{
+          opacity: 0,
+          transitionEnd: {
+            display: "none",
+          },
+        }}
+        className="fixed w-full min bg-white min-h-screen flex items-center justify-center  z-50 transition-opacity "
+      >
+        <img src="preloader.gif" />
+      </motion.div>
+      <NavbarTwo />
+      <SearchBar />
+      <CardOne />
+      <IconCard />
+      <BigCard />
+      <YourNextTourCard />
+      <AllTripCard />
+      <ImageSmallGallery />
+      <ExtraCards />
+      <CardTwo tours={tours} />
+      <Contact />
+      <Footer />
     </>
   );
 }

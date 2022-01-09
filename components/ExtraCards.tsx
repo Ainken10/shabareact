@@ -31,6 +31,7 @@ export default function ExtraCards() {
   let formatter = new Intl.NumberFormat("hu-HU", {
     style: "currency",
     currency: "HUF",
+    minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
   const [tours, setTours] = useState<any>([]);
@@ -67,18 +68,18 @@ export default function ExtraCards() {
                 <div className="flex items-center space-x-3 text-orange-300 font-bold ">
                   <ClockIcon className="w-5 h-5 " /> <p>  {getDayDifferenceBetweenTwoDates(
                       x.startDates[0],
-                      tours[0]?.endDates[0]
+                      x.endDates[0]
                     )} nap </p>
                   <MoonIcon className="w-5 h-5 " /> <p>  {getDayDifferenceBetweenTwoDates(
                       x.startDates[0],
-                      tours[0]?.endDates[0]
+                      x.endDates[0]
                     )-1} éjszaka</p>
                 </div>
               </div>
               <p className="text-md text-gray-500">{x.tourCountries.join(" - ")}</p>
               <p className="text-2xl font-semibold">{formatter.format(x.priceFrom)} Ft</p>
               <div className="flex flex-row-reverse items-center justify-between">
-                <a className="text-orange-400 cursor-pointer hover:text-orange-600 flex items-center space-x-2"><p>Érdekel</p> <LogoutIcon className="h-5 w-5" /> </a>
+                <a   href={`/ut/${x._id}`} className="text-orange-400 cursor-pointer hover:text-orange-600 flex items-center space-x-2"><p>Érdekel</p> <LogoutIcon className="h-5 w-5" /> </a>
               
               </div>
             </div>

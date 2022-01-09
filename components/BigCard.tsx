@@ -12,6 +12,7 @@ export default function BigCard() {
   let formatter = new Intl.NumberFormat("hu-HU", {
     style: "currency",
     currency: "HUF",
+    minimumFractionDigits :0,
     maximumFractionDigits: 0,
   
   });
@@ -50,7 +51,7 @@ export default function BigCard() {
           <p className="text-white  ">{formatter.format(tours[0]?.priceFrom)} -tól</p>
           <div className="w-full flex  space-x-5 my-5">
             <a
-              href="tel:123123123"
+             href={`/ut/${tours[0]?._id}`}
               className="px-4 py-3 flex items-center justify-center  border border-transparent text-base font-medium rounded-md text-orange-700 bg-white hover:bg-orange-400 hover:text-white  "
             >
               Információ

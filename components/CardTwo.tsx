@@ -14,6 +14,7 @@ export default function CardTwo(props :any) {
   let formatter = new Intl.NumberFormat("hu-HU", {
     style: "currency",
     currency: "HUF",
+    minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
 
@@ -59,7 +60,7 @@ export default function CardTwo(props :any) {
 
               <hr className="border-b" />
               <div className="flex flex-row-reverse items-center justify-between">
-                <a className="text-orange-400 cursor-pointer hover:text-orange-600 flex items-center space-x-2">
+                <a href={`/ut/${x._id}`} className="text-orange-400 cursor-pointer hover:text-orange-600 flex items-center space-x-2">
                   <p>Érdekel</p> <LogoutIcon className="h-5 w-5" />{" "}
                 </a>
               </div>

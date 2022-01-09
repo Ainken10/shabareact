@@ -54,7 +54,7 @@ export default function Search() {
         loader
       ) : (
         <>
-          <Navbar /> <SearchBar  /> <CardTwo tours={tours}/>
+          <Navbar title='Keresd meg a legjobb utazást Velünk.' text='lorem impsum' /> <SearchBar  /> <CardTwo tours={tours}/>
         </>
       )}
     </>

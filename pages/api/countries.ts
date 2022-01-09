@@ -5,20 +5,18 @@ import Tours from "../../models/tour";
 
 export default async function handler(req: NextApiRequest, res: any) {
   try {
-
-
     // connect to the database
     const db = await dbConnect();
     // fetch the posts
-    let tours = await Tours.find({})
-      .lean()
-      .select("tourCountries") 
+    let tours = await Tours.find({}).lean().select("tourCountries");
 
-    let countries :any =[] 
-    tours.forEach(element => {
-        countries.push(...element.tourCountries)
+    let countries: any = [];
+    tours.forEach((element) => {
+      countries.push(...element.tourCountries);
     });
-    countries  = [...new Set(countries)];
+    countries = countries.filter((item: any, pos: any) => {
+      return countries.indexOf(item) == pos;
+    });
     return res.status(200).json({ countries });
     // return the posts
   } catch (error) {

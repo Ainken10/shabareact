@@ -10,9 +10,6 @@ const items = [
 
 ];
 
-const imga =
-  "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80";
-
 export default function IconCard() {
   return (
     <div className="flex items-center justify-center my-40 flex-wrap ">
