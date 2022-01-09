@@ -62,7 +62,7 @@ export default function ExtraCards() {
               src={x.tourPhotos[0]}
             />
 
-            <div className="w-[60%]  h-72 bg-orange-100  rounded-tr-3xl flex flex-col p-5  space-y-4">
+            <div className="w-[310px]  h-72 bg-orange-100  rounded-tr-3xl flex flex-col p-5  space-y-4">
               <p className="font-bold text-3xl">{x.tourTitle}</p>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-3 text-orange-300 font-bold ">

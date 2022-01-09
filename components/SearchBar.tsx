@@ -37,7 +37,7 @@ export default function SearchBar() {
       onSubmit={(e) => searchInTours(e)}
       className="w-full h-56  flex items-center justify-center absolute text-orange-500 "
     >
-      <div className="shadow-lg w-2/3 p-6 flex flex-wrap sm:flex-nowrap sm:space-x-2 bg-orange-400 rounded-lg relative -top-5 sm:-top-20 z-10">
+      <div className="shadow-lg w-2/3 p-6 flex flex-wrap sm:flex-nowrap sm:space-x-2 bg-orange-400 rounded-lg relative  sm:-top-20 z-10">
         <div className="col-span-6 sm:col-span-6 lg:col-span-2 w-full sm:w-1/4 ">
           <label
             htmlFor="country"
