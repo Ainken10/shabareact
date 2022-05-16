@@ -41,7 +41,7 @@ export default function CardOne() {
             className="group transition w-full flex justify-center items-center rounded-xl h-96 cursor-pointer  bg-cover max-w-full  "
           >
             <div className="absolute gap-8 -z-10">
-              <img className="rounded-lg h-96 w-[500px]" src={x.tourPhotos[0]} />
+              <img className="rounded-lg h-96 w-[420px]" src={x.tourPhotos[0]} />
             </div>
 
             <div className="transition z-10 w-2/3 h-fit border-[2px] border-dashed h text-white bg-orange-500 border-white rounded-lg p-5 group-hover:hidden">

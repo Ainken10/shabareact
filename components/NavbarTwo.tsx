@@ -4,6 +4,14 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+// install Swiper modules
+
 const navigation = [
   { name: "Last minute", href: "#" },
   { name: "Ajánlott ", href: "#" },
@@ -11,6 +19,7 @@ const navigation = [
 ];
 
 export default function NavbarTwo() {
+  SwiperCore.use([Autoplay, Navigation]);
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -62,7 +71,7 @@ export default function NavbarTwo() {
                     href="#"
                     className="font-medium text-orange-600 hover:text-orange-500"
                   >
-                   Kapcsolat
+                    Kapcsolat
                   </a>
                 </div>
               </nav>
@@ -155,11 +164,46 @@ export default function NavbarTwo() {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <Image src="/Vietnam2.jpg" layout='fill'    className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "/>
-        {/* <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="Vietnam2.jpg"
-        /> */}
+        <Swiper
+          loop={true}
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
+        
+          slidesPerView={1}
+        >
+          {" "}
+          <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
+            <Image
+              src="/Bali3.jpg"
+              layout="fill"
+              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
+            />
+          </SwiperSlide>
+          <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
+            <Image
+              src="/Bali4.jpg"
+              layout="fill"
+              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
+            />
+          </SwiperSlide>
+          <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
+            <Image
+              src="/Vietnam2.jpg"
+              layout="fill"
+              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
+            />
+          </SwiperSlide>
+          <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
+            <Image
+              src="/Pisa.jpg"
+              layout="fill"
+              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );

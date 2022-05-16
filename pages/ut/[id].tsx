@@ -39,7 +39,7 @@ export default function tourId() {
         loader
       ) : (
         <>
-          <Navbar title={tour.tourTitle} text={tour.tourCountries.join(" - ")} />
+          <Navbar title={tour?.tourTitle} text={tour?.tourCountries.join(" - ")} />
           <TourDetails TourDetails={tour} />
  
         </>
