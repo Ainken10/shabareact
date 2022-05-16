@@ -56,7 +56,7 @@ export default function AllTripCard() {
   });
   const [tours, setTours] = useState<any>([]);
   useEffect(() => {
-    const res = fetch("/api/tours?skip=66&limit=4", {
+    const res = fetch("/api/tours?skip=25&limit=4", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {

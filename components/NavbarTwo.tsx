@@ -122,9 +122,9 @@ export default function NavbarTwo() {
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Az utazás örökélmény a</span>{" "}
+                <span className="block xl:inline">Az utazás örök élmény a  </span>{" "}
                 <span className="block text-orange-400 xl:inline">
-                  Sába utazással
+                Sába Utazással!
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -146,7 +146,7 @@ export default function NavbarTwo() {
                     href="tel:123123123"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-orange-700 bg-orange-100 hover:bg-orange-200 md:py-4 md:text-lg md:px-10"
                   >
-                    <PhoneIcon className="h-5 w-5 " /> <p>+36 20 514 9807</p>
+                    <PhoneIcon className="h-5 w-5 " /> <p>+36 50 117 10 26</p>
                   </a>
                 </div>
               </div>

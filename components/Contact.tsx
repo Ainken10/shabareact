@@ -65,7 +65,7 @@ export default function Contact() {
               <hr className="border-gray-100" />
 
               <a href='mail:info@sabautazas.hu' className="flex items-center justify-center p-4 bg-orange-300 rounded-tl-2xl text-white text-3xl hover:bg-orange-500 transition cursor-pointer">info@sabautazas.hu</a>
-              <a href='tel:+36 50 117 1026' className="flex items-center justify-center p-4 border-2 border-orange-300 text-orange-300 text-3xl rounded-br-2xl hover:bg-orange-400 hover:text-white transition cursor-pointer">+36 50 117 1026</a>
+              <a href='tel:+36 50 117 1026' className="flex items-center justify-center p-4 border-2 border-orange-300 text-orange-300 text-3xl rounded-br-2xl hover:bg-orange-400 hover:text-white transition cursor-pointer">+36 50 117 10 26</a>
             </div>
           </div>
         </div>

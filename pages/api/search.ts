@@ -58,13 +58,14 @@ export default async function handler(req: NextApiRequest, res: any) {
     const query :any= {
       tourCountries:{},
       // endDates:{},
-      // starDates:{},
-      "tourPhotos.0":{ $exists: true }
+      starDates: { $exists: true, $ne: [] } ,
+      "tourPhotos.0":{ $exists: true },
+   
      };
 
      const tourCountries = req.query.country ? {tourCountries: { $in: [req.query.country] }} : {};
-     const endDates = req.query.end ? {endDates: { $in: [req.query.end] }  }: {};
-     const starDates = req.query.start ? {startDates: { $in: [req.query.start] }  }: {};
+     const endDates = req.query.end ? {endDates: { $in: [req.query.end] }  }: {  };
+     const starDates = req.query.start ? {startDates: { $in: [req.query.start] }  }: {startDates: { $exists: true, $not: {$size: 0} }};
      const tourPhotos = { "tourPhotos.0":{ $exists: true }};
 
     query.tourCountries = { $in: [orszag] };
@@ -84,7 +85,8 @@ export default async function handler(req: NextApiRequest, res: any) {
       .select("startDates")
       .select("priceFrom")
       
-    
+    console.log(tours)
+    console.log({...tourCountries, ...starDates, ...endDates, ...tourPhotos})
     return res.status(200).json({ tours });
     // return the posts
   } catch (error) {

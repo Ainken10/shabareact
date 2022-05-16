@@ -11,7 +11,7 @@ export default function CardOne() {
 
   const [tours, setTours] = useState<any>([])
   useEffect(() => {
-    const res = fetch("/api/tours?skip=99&limit=6", {
+    const res = fetch("/api/tours?skip=100&limit=6", {
       method: "GET",
     }).then((tourResults) =>
     tourResults.json().then((data) => {

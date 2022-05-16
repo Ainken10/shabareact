@@ -9,8 +9,18 @@ export default async function handler(req: NextApiRequest, res: any) {
 
     // connect to the database
     const db = await dbConnect();
-    // fetch the posts
-    const tours = await Tours.find({"tourPhotos.0": { $exists: true }})
+
+    // Tours.update({}, {$pull : { endDates: {$regex:'2021'} } }, (data,err) =>{
+
+    //   console.log("HasreggggeexOO")
+    // })
+
+    // Tours.update({}, { startDates: ["2021-10-10","2022-01-02","2021-11-30"] }, (data,err) =>{
+
+    //   console.log("HasdsadasdOOOOOOOOOOOOOOO")
+    // })
+
+    const tours = await Tours.find({"tourPhotos.0": { $exists: true } , startDates: { $exists: true, $not: {$size: 0} } })
       .lean()
       .select("tourPhotos")
       .select("tourTitle")
