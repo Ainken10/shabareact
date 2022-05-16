@@ -116,9 +116,9 @@ export default function TourDetails({ TourDetails }: any) {
                  lorem <br></br>
                  <br></br>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam reiciendis facilis odit facere maiores vitae, magnam commodi fuga culpa tenetur laborum modi laboriosam et quis libero nesciunt hic quo soluta. </div>
                 </div>
+                <p>{TourDetails.startDates}</p>
+               
 
-
-                  
 
                 <div className="flex justify-between">
                   <span className="title-font font-medium text-2xl text-gray-900">

@@ -177,28 +177,28 @@ export default function NavbarTwo() {
           {" "}
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src="/Bali3.jpg"
+              src={"/Bali3.jpg"}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src="/Bali4.jpg"
+              src={"/Bali4.jpg"}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src="/Vietnam2.jpg"
+              src={"/Vietnam2.jpg"}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src="/Pisa.jpg"
+              src={"/Pisa.jpg"}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
