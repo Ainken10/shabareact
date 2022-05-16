@@ -4,6 +4,12 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
+import kep from "../public/Bali3.jpg";
+import kep2 from "../public/Bali4.jpg";
+import kep3 from "../public/Vietnam2.jpg";
+
+
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 
@@ -137,9 +143,7 @@ export default function NavbarTwo() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+                Idéglenes szöveg
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -177,32 +181,26 @@ export default function NavbarTwo() {
           {" "}
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src={"/Bali3.jpg"}
+              src={kep}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src={"/Bali4.jpg"}
+              src={kep2}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
             <Image
-              src={"/Vietnam2.jpg"}
+              src={kep3}
               layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
-          <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-            <Image
-              src={"/Pisa.jpg"}
-              layout="fill"
-              className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
-            />
-          </SwiperSlide>
+       
         </Swiper>
       </div>
     </div>
