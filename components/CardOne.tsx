@@ -43,7 +43,7 @@ export default function CardOne() {
             <div className="absolute gap-8 -z-10">
               <img className="rounded-lg h-96 w-[420px]" src={x.tourPhotos[0]} />
             </div>
-
+ 
             <div className="transition z-10 w-2/3 h-fit border-[2px] border-dashed h text-white bg-orange-500 border-white rounded-lg p-5 group-hover:hidden">
               <p className=" font-semibold text-2xl">{x.tourTitle}</p>
               <p className=" font-semibold text-lg">{x.tourCountries.join(' - ')}</p>
