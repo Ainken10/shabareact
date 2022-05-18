@@ -4,9 +4,9 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
-import kep from "../public/Bali3.jpg";
-import kep2 from "../public/Bali4.jpg";
-import kep3 from "../public/Vietnam2.jpg";
+// import kep from "../public/Bali3.jpg";
+// import kep2 from "../public/Bali4.jpg";
+// import kep3 from "../public/Vietnam2.jpg";
 
 
 
@@ -138,12 +138,12 @@ export default function NavbarTwo() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">Az utazás örök élmény a  </span>{" "}
-                <span className="block text-green-400 xl:inline">
+                <span className="block text-blue-400 xl:inline">
                 Sába Utazással!
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-               Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt   Teszt
+               <br></br>
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -180,23 +180,23 @@ export default function NavbarTwo() {
         >
           {" "}
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-            <Image
-              src={kep}
-              layout="fill"
+            <img
+              src={"https://images.pexels.com/photos/4388165/pexels-photo-4388165.jpeg"}
+              // layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-            <Image
-              src={kep2}
-              layout="fill"
+            <img
+              src={"https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+              // layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
           <SwiperSlide className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full">
-            <Image
-              src={kep3}
-              layout="fill"
+            <img
+              src={"https://images.pexels.com/photos/5092763/pexels-photo-5092763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+              // layout="fill"
               className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
             />
           </SwiperSlide>
