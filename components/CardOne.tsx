@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
   const diffTime = Math.abs(date2 - date1);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  if (diffDays ==-1) {
+    diffDays = 0
+  }
   return diffDays;
 };
 

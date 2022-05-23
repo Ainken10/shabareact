@@ -45,6 +45,7 @@ export default function TourDetails({ TourDetails }: any) {
 
   return (
     <div className="  ">
+   
       <div className="p-5 ">
         <section className="text-gray-600 body-font overflow-hidden">
           <div className="container px-5 py-24 mx-auto">
@@ -111,18 +112,20 @@ export default function TourDetails({ TourDetails }: any) {
                 </div>
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
              
-                  <div className="flex ml-6 items-center">
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima tempore, nihil pariatur maiores quia laborum quas velit eligendi fugiat placeat neque molestias aperiam, quis perferendis inventore vitae corrupti accusamus esse?
-                 lorem <br></br>
-                 <br></br>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam reiciendis facilis odit facere maiores vitae, magnam commodi fuga culpa tenetur laborum modi laboriosam et quis libero nesciunt hic quo soluta. </div>
+         
                 </div>
-                <p>{TourDetails.startDates}</p>
+                <p className="text-red-400">
+              
+  
+
+                
+                </p>
                
 
 
                 <div className="flex justify-between">
                   <span className="title-font font-medium text-2xl text-gray-900">
-                  {formatter.format(TourDetails.priceFrom)} Ft
+                  {formatter.format(TourDetails.priceFrom)} -tól
                   </span>
                   <a href='tel:+36 50 117 1026' className="flex items-center justify-center p-4 border-2 border-orange-300 text-white text-3xl rounded-br-2xl bg-orange-400 hover:text-white hover:scale-125 transition cursor-pointer">+36 50 117 10 26</a>
 
@@ -130,8 +133,8 @@ export default function TourDetails({ TourDetails }: any) {
               </div>
             </div>
           </div>
-         
-     
+                  <div className="mx-24" dangerouslySetInnerHTML={{ __html:   TourDetails.tourDescriptions }} />
+                  <div className="mx-24" dangerouslySetInnerHTML={{ __html:   TourDetails.tourSpecialInfos }} />
         </section>
 
         </div>

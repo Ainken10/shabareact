@@ -25,7 +25,10 @@ export default function ExtraCards() {
     date1 = new Date(date1);
     date2 = new Date(date2);
     const diffTime: any = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    if (diffDays ==-1) {
+      diffDays = 0
+    }
     return diffDays;
   };
   let formatter = new Intl.NumberFormat("hu-HU", {

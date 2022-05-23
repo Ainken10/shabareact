@@ -8,7 +8,10 @@ export default function CardTwo(props :any) {
     date1 = new Date(date1);
     date2 = new Date(date2);
     const diffTime: any = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    if (diffDays ==-1) {
+      diffDays = 0
+    }
     return diffDays;
   };
   let formatter = new Intl.NumberFormat("hu-HU", {
@@ -24,7 +27,7 @@ export default function CardTwo(props :any) {
         return (
           <div
             key={i}
-            className="w-full bg-white border-2 border-gray-100  relative flex sm:flex-row flex-col rounded-2xl  "
+            className="w-full  border-2 border-gray-100 bg-blue-100 relative flex sm:flex-row flex-col rounded-2xl  "
           >
             <img
               className="w-full sm:w-1/2 object-center object-cover h-80  rounded-l-2xl "
@@ -32,9 +35,9 @@ export default function CardTwo(props :any) {
             />
 
             <div className="w-full sm:w-1/2 h-80   rounded-tr-3xl flex  flex-col p-5  space-y-4">
-              <p className="font-bold text-3xl">{x.tourTitle}</p>
+              <p className="font-bold text-3xl text-orange-400">{x.tourTitle}</p>
               <div className="flex flex-col">
-                <div className="flex items-center space-x-3 text-orange-300 font-bold ">
+                <div className="flex items-center space-x-3 text-blue-400 font-bold ">
                   <ClockIcon className="w-5 h-5 " />{" "}
                   <p>
                     {getDayDifferenceBetweenTwoDates(
