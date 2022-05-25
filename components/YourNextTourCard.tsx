@@ -43,7 +43,7 @@ export default function YourNextTourCard() {
   }, []);
   return (
     <>
-      {tours.map((x: any, i: any) => {
+      {tours?.map((x: any, i: any) => {
         return (
           <div
             key={i}

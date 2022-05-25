@@ -23,7 +23,7 @@ export default function CardTwo(props :any) {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 rounded-lg  mt-44 px-10 my-24 ">
-      {props.tours.map((x: any, i: number) => {
+      {props.tours?.map((x: any, i: number) => {
         return (
           <div
             key={i}

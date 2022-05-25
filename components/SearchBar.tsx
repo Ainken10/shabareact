@@ -51,7 +51,7 @@ export default function SearchBar() {
             autoComplete="address-level2"
             className="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
           >
-            {countries.map((x: any) => {
+            {countries?.map((x: any) => {
               return (
                 <option key={x} value={x}>
                   {x}

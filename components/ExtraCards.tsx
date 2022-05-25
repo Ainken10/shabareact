@@ -52,7 +52,7 @@ export default function ExtraCards() {
   }, []);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 rounded-lg  mt-44 px-10 my-24 ">
-      {tours.map((x :any) => {
+      {tours?.map((x :any) => {
         return (
           <div
             key={x.tourTitle}

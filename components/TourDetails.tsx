@@ -61,7 +61,7 @@ export default function TourDetails({ TourDetails }: any) {
                       thumbs={{ swiper: thumbsSwiper }}
                       className=""
                     >
-                      {TourDetails.tourPhotos.map((x: any, i: any) => {
+                      {TourDetails?.tourPhotos?.map((x: any, i: any) => {
                         return (
                           <SwiperSlide key={x._id}>
                             <a href={x}>
@@ -85,7 +85,7 @@ export default function TourDetails({ TourDetails }: any) {
                   watchSlidesProgress={true}
                   className=""
                 >
-                  {TourDetails.tourPhotos.map((x: any) => {
+                  {TourDetails?.tourPhotos?.map((x: any) => {
                     return (
                       <SwiperSlide key={x._id} className=" w-28 min-w-[100px]">
                         <img
