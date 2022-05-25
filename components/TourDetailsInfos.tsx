@@ -26,7 +26,7 @@ export default function TourDetailsInfos({ tourInfo }: any) {
         {tourInfo?.map((x: any) => {
                  return (
           
-                    <div className="-my-8 divide-y-2 divide-gray-100">
+                    <div className="divide-y-2 divide-gray-100 my-5">
                       <div className="py-8 flex flex-wrap md:flex-nowrap">
                         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                           <span className="font-semibold title-font text-gray-700">{x.tourTypeName}</span>
@@ -39,13 +39,13 @@ export default function TourDetailsInfos({ tourInfo }: any) {
                           <div>
                               <div className="flex items-center">
                                <FaPlaneDeparture className="text-orange-400 w-5 mr-2"/>  
-                               <p className="font-semibold mr-2">{x.flightInfo.fromDepartureAirport} </p>
-                               <p className="font-semibold"> {Moment(x.flightInfo.fromDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p>
+                               <p className="font-semibold mr-2">{x.flightInfo?.fromDepartureAirport} </p>
+                               <p className="font-semibold"> {Moment(x.flightInfo?.fromDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p>
                                <FaArrowRight className="text-orange-400 mx-20 w-5"/> 
                                
                                <FaPlaneArrival className="text-orange-400 w-5 mr-2"/>  
-                               <p className="font-semibold mr-2"> {Moment(x.flightInfo.toDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p> 
-                               <p className="font-semibold"> {x.flightInfo.toDepartureAirport} </p>
+                               <p className="font-semibold mr-2"> {Moment(x.flightInfo?.toDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p> 
+                               <p className="font-semibold"> {x.flightInfo?.toDepartureAirport} </p>
                         
                               </div>
                           </div>
@@ -53,13 +53,13 @@ export default function TourDetailsInfos({ tourInfo }: any) {
                           <div>
                               <div className="flex items-center">
                                <FaPlaneDeparture className="text-orange-400 w-5 mr-2"/>  
-                               <p className="font-semibold mr-2">{x.flightInfo.backFromDepartureAirport} </p>
-                               <p className="font-semibold"> {Moment(x.flightInfo.backFromDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p>
+                               <p className="font-semibold mr-2">{x.flightInfo?.backFromDepartureAirport} </p>
+                               <p className="font-semibold"> {Moment(x.flightInfo?.backFromDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p>
                                <FaArrowRight className="text-orange-400 mx-20 w-5"/> 
                                
                                <FaPlaneArrival className="text-orange-400 w-5 mr-2"/>  
-                               <p className="font-semibold mr-2"> {Moment(x.flightInfo.backToDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p> 
-                               <p className="font-semibold"> {x.flightInfo.backToDepartureAirport} </p>
+                               <p className="font-semibold mr-2"> {Moment(x.flightInfo?.backToDepartureAirportTime).format('YYYY-MM-DD HH:mm"')}</p> 
+                               <p className="font-semibold"> {x.flightInfo?.backToDepartureAirport} </p>
                         
                               </div>
                           </div>
@@ -72,7 +72,7 @@ export default function TourDetailsInfos({ tourInfo }: any) {
                    
                   
                     </div>
-        
+
                  )
                 })}
          
