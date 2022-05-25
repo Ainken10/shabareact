@@ -6,8 +6,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
-const lorem =
-  "Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod.";
+
 
 const items = [
   {

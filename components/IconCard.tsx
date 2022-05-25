@@ -1,6 +1,6 @@
 import { CashIcon, ClockIcon, MapIcon, ShieldCheckIcon } from "@heroicons/react/outline";
 import React from "react";
-const lorem = 'Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod.'
+const lorem = ''
 
 const items = [
   { icon: <MapIcon className="h-10 w-10"/>, name: "Legjobb válogatások", text: lorem},

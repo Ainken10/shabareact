@@ -6,7 +6,7 @@ import { MenuIcon, PhoneIcon, XIcon } from "@heroicons/react/outline";
 const navigation = [
   { name: "Last minute", href: "/search?country=Olaszország" },
   { name: "Ajánlott ", href: "/search?country=Bali" },
-  { name: "Hazai", href: "/search?country=Magyarország" },
+  // { name: "Hazai", href: "/search?country=Magyarország" },
 ];
 
 export default function Navbar({title,text} :any) {
@@ -57,7 +57,7 @@ export default function Navbar({title,text} :any) {
                     </a>
                   ))}
                   <a
-                    href="#"
+                  href="tel:+36501171026"
                     className="font-medium text-orange-600 hover:text-orange-500"
                   >
                     Kapcsolat
@@ -125,7 +125,7 @@ export default function Navbar({title,text} :any) {
                 
                 <span className="block text-orange-400 xl:inline">
                   <br/>
-                  Sábautazás.
+                  Sába utazás.
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl  md:mt-5 md:text-xl lg:mx-0">

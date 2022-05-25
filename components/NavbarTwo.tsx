@@ -19,9 +19,9 @@ import "swiper/css/navigation";
 // install Swiper modules
 
 const navigation = [
-  { name: "Last minute", href: "#" },
-  { name: "Ajánlott ", href: "#" },
-  { name: "Hazai", href: "#" },
+  { name: "Last minute", href: "/search?country=Olaszország" },
+  { name: "Ajánlott ", href: "/search?country=Bali" },
+  // { name: "Hazai", href: "#" },
 ];
 
 export default function NavbarTwo() {
@@ -145,24 +145,7 @@ export default function NavbarTwo() {
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                <br></br>
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-400 hover:bg-orange-500 md:py-4 md:text-lg md:px-10"
-                  >
-                    Utazni szeretnék!
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="tel:123123123"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-orange-700 bg-orange-100 hover:bg-orange-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    <PhoneIcon className="h-5 w-5 " /> <p>+36 50 117 10 26</p>
-                  </a>
-                </div>
-              </div>
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"><div className="rounded-md shadow"><a href="mail:info@sabautazas.hu" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-400 hover:bg-orange-500 md:py-4 md:text-lg md:px-10">info@sabautazas.hu</a></div><div className="mt-3 sm:mt-0 sm:ml-3"><a   href="tel:+36501171026" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-orange-700 bg-orange-100 hover:bg-orange-200 md:py-4 md:text-lg md:px-10"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" className="h-5 w-5 "><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> <p>+36 50 117 10 26</p></a></div></div>
             </div>
           </main>
         </div>

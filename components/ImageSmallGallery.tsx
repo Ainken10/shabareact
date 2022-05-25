@@ -6,8 +6,6 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
-const lorem =
-  "Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod.";
 
 const items = [
   {
@@ -60,7 +58,7 @@ export default function ImageSmallGallery() {
   });
   const [tours, setTours] = useState<any>([]);
   useEffect(() => {
-    const res = fetch("/api/tours?skip=134&limit=4", {
+    const res = fetch("/api/tours?skip=184&limit=4", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {
@@ -85,8 +83,8 @@ export default function ImageSmallGallery() {
             className="w-full h-full object-center object-cover"
           />
           <div className="w-full h-full absolute text-black text-2xl z-50 opacity-0 group-hover:opacity-100 transition items-center justify-center bg-black bg-opacity-50 flex flex-col">
-            <p className="text-white">{tours[0]?.tourTitle}</p>
-            <p className="text-white">{formatter.format(tours[0]?.priceFrom)}</p>
+            <p className="text-white text-sm">{tours[0]?.tourTitle}</p>
+            <p className="text-white text-sm">{formatter.format(tours[0]?.priceFrom)}</p>
             <div className="flex space-x-2 items-center justify-center text-sm">
               <a   href={`/ut/${tours[0]?._id}`}  className="text-orange-400 text-lg">Felfedezés </a>
               <p className="text-orange-400 ">
@@ -102,8 +100,8 @@ export default function ImageSmallGallery() {
               className="w-full h-full object-center object-cover"
             />
             <div className="w-full h-full absolute text-black text-2xl z-50 opacity-0 group-hover:opacity-100 transition items-center justify-center bg-black bg-opacity-50 flex flex-col">
-              <p className="text-white">{tours[1]?.tourTitle}</p>
-              <p className="text-white">{formatter.format(tours[1]?.priceFrom)}</p>
+              <p className="text-white text-sm">{tours[1]?.tourTitle}</p>
+              <p className="text-white text-sm">{formatter.format(tours[1]?.priceFrom)}</p>
               <div className="flex space-x-2 items-center justify-center text-sm">
                 <a href={`/ut/${tours[1]?._id}`}  className="text-orange-400">Felfedezés </a>
                 <p className="text-orange-400 ">
@@ -118,8 +116,8 @@ export default function ImageSmallGallery() {
               className=" w-full h-full object-center object-cover cursor-pointer z-20"
             />
             <div className="w-full h-full absolute text-black text-2xl z-50 opacity-0 group-hover:opacity-100 transition items-center justify-center bg-black bg-opacity-50 flex flex-col">
-            <p className="text-white">{tours[2]?.tourTitle}</p>
-              <p className="text-white">{formatter.format(tours[2]?.priceFrom)}</p>
+            <p className="text-white text-sm">{tours[2]?.tourTitle}</p>
+              <p className="text-white text-sm">{formatter.format(tours[2]?.priceFrom)}</p>
               <div className="flex space-x-2 items-center justify-center text-sm">
                 <a href={`/ut/${tours[2]?._id}`} className="text-orange-400">Felfedezés </a>
                 <p className="text-orange-400 ">
@@ -135,8 +133,8 @@ export default function ImageSmallGallery() {
             className="w-full h-full object-center object-cover"
           />
           <div className="w-full h-full absolute text-black text-2xl z-50 opacity-0 group-hover:opacity-100 transition items-center justify-center bg-black bg-opacity-50 flex flex-col">
-          <p className="text-white">{tours[3]?.tourTitle}</p>
-              <p className="text-white">{formatter.format(tours[3]?.priceFrom)}</p>
+          <p className="text-white text-sm">{tours[3]?.tourTitle}</p>
+              <p className="text-white text-sm">{formatter.format(tours[3]?.priceFrom)}</p>
             <div className="flex space-x-2 items-center justify-center text-sm">
               <a href={`/ut/${tours[3]?._id}`} className="text-orange-400">Felfedezés </a>
               <p className="text-orange-400 ">

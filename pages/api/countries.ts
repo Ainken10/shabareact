@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: any) {
     // connect to the database
     const db = await dbConnect();
     // fetch the posts
-    let tours = await Tours.find({}).lean().select("tourCountries");
+    let tours = await Tours.find({}).lean().select("tourCountries").sort({tourCountries: 1})
 
     let countries: any = [];
     tours.forEach((element) => {

@@ -17,8 +17,6 @@ const items = [
     stars: "5",
   },
 ];
-const lorem =
-  "Lorem ipsum dolor sit amet, consetetur sadip scing elitr, sed diam nonumy eirmod.";
 
 export default function ExtraCards() {
   const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {

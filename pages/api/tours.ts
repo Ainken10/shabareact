@@ -10,11 +10,14 @@ export default async function handler(req: NextApiRequest, res: any) {
     // connect to the database
     const db = await dbConnect();
 
-    // Tours.update({}, {$pull : { endDates: {$regex:'2021'} } }, (data,err) =>{
-
-    //   console.log("HasreggggeexOO")
+    // Tours.update({}, {$pull : { endDates: {$regex:'2022-04'} } }, (data,err) =>{
+    //   console.log("Data pulled "); // Success
     // })
-
+  //   Tours.deleteMany({ tourCountries : { $in: [ 'Magyarország' ]} }).then(function(){
+  //     console.log("Data deleted"); // Success
+  // }).catch(function(error :any){
+  //     console.log(error); // Failure
+  // });
     // Tours.update({}, { startDates: ["2021-10-10","2022-01-02","2021-11-30"] }, (data,err) =>{
 
     //   console.log("HasdsadasdOOOOOOOOOOOOOOO")

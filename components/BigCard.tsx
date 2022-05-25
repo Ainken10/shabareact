@@ -60,7 +60,7 @@ export default function BigCard() {
               Információ
             </a>
             <a
-              href="tel:123123123"
+       href="tel:+36501171026"
               className="px-4 py-3 flex items-center justify-center  border border-transparent text-base font-medium rounded-md text-orange-700 bg-orange-200 hover:bg-orange-400 hover:text-white"
             >
               Érdekel
