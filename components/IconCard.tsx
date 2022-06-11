@@ -3,11 +3,10 @@ import React from "react";
 const lorem = ''
 
 const items = [
+  { icon: <ClockIcon className="h-10 w-10" />, name: "Több mint 25 év tapasztalat", text: lorem },
+  { icon: <InformationCircleIcon className="h-10 w-10" />, name: "Segítőkész kiszolgálás", text: lorem  },
   { icon: <ChatAltIcon className="h-10 w-10"/>, name: "Egyedi igények kezelése", text: lorem},
   { icon: <CreditCardIcon className="h-10 w-10" />, name: "Legjobb ajánlatok egy helyen", text: lorem },
-  { icon: <InformationCircleIcon className="h-10 w-10" />, name: "Segítőkész kiszolgálás", text: lorem  },
-  { icon: <ClockIcon className="h-10 w-10" />, name: "Több mint 25 év tapasztalat", text: lorem },
-
 ];
 
 export default function IconCard() {
