@@ -21,7 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 4000);
-    const res = fetch("/api/tours?skip=20&limit=6", {
+    const res = fetch("/api/tours?skip=25&limit=6", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {

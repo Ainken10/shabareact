@@ -58,7 +58,7 @@ export default function ImageSmallGallery() {
   });
   const [tours, setTours] = useState<any>([]);
   useEffect(() => {
-    const res = fetch("/api/tours?skip=184&limit=4", {
+    const res = fetch("/api/tours?skip=14&limit=4", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {

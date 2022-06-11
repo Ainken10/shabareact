@@ -9,9 +9,11 @@ export default function CardTwo(props :any) {
     date2 = new Date(date2);
     const diffTime: any = Math.abs(date2 - date1);
     let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    if (diffDays ==-1) {
-      diffDays = 0
+    
+    if (diffDays ==-1 || diffDays == 0) {
+      diffDays = 1
     }
+
     return diffDays;
   };
   let formatter = new Intl.NumberFormat("hu-HU", {

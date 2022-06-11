@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: any) {
     // Tours.update({}, {$pull : { startDates: {$regex:'2022-01'} } }, (data,err) =>{
     //   console.log("Data pulled "); // Success
     // })
-  //   Tours.deleteMany({ tourCountries : { $in: [ 'Magyarország' ]} }).then(function(){
+  //   Tours.deleteMany({ partner:"aboro"}).then(function(){
   //     console.log("Data deleted"); // Success
   // }).catch(function(error :any){
   //     console.log(error); // Failure

@@ -99,7 +99,7 @@ export default function TourDetails({ TourDetails }: any) {
               </div>
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col" >
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                {TourDetails.tourCountries}
+                {TourDetails.tourCountries.join(' - ')}
                 </h2>
                 <h1 className=" text-4xl title-font font-bold mb-1 text-orange-500">
                 {TourDetails.tourTitle}

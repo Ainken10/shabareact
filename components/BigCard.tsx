@@ -21,7 +21,7 @@ export default function BigCard() {
   });
   const [tours, setTours] = useState<any>([]);
   useEffect(() => {
-    const res = fetch("/api/getsingletour?key=Ciprus", {
+    const res = fetch("/api/getsingletour?key=Montenegro", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {

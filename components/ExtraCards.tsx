@@ -37,7 +37,7 @@ export default function ExtraCards() {
   });
   const [tours, setTours] = useState<any>([]);
   useEffect(() => {
-    const res = fetch("/api/tours?skip=30&limit=2", {
+    const res = fetch("/api/tours?skip=33&limit=2", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {

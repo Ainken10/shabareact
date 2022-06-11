@@ -35,7 +35,6 @@ export default function CardOne() {
   });
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3  gap-8 rounded-lg  mt-44 px-10  ">
-      
       {tours?.map((x :any) => {
         return (
           <a

@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: any) {
     // connect to the database
     const db = await dbConnect();
     // fetch the posts
-    const tours = await Tours.find({"tourCountries.0" :req.query.key})
+    const tours = await Tours.find({"tourCountries.0" :req.query.key,"tourPhotos.0": { $exists: true } , startDates: { $exists: true, $not: {$size: 0} }})
       .lean()
       .select("tourPhotos")
       .select("tourTitle")

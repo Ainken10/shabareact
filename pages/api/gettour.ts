@@ -18,6 +18,8 @@ export default async function handler(req: NextApiRequest, res: any) {
       .select("tourSpecialInfos")
       .select("startDates")
       .select("priceFrom");
+
+      console.log(tours)
     return res.status(200).json({ tours });
     // return the posts
   } catch (error) {
