@@ -1,11 +1,11 @@
-import { CashIcon, ClockIcon, MapIcon, ShieldCheckIcon } from "@heroicons/react/outline";
+import { CashIcon, ClockIcon, MapIcon, ShieldCheckIcon,ChatAltIcon,CreditCardIcon,InformationCircleIcon } from "@heroicons/react/outline";
 import React from "react";
 const lorem = ''
 
 const items = [
-  { icon: <MapIcon className="h-10 w-10"/>, name: "Egyedi igények kezelése", text: lorem},
-  { icon: <CashIcon className="h-10 w-10" />, name: "Legjobb ajánlatok egy helyen", text: lorem },
-  { icon: <ShieldCheckIcon className="h-10 w-10" />, name: "Segítőkész kiszolgálás", text: lorem  },
+  { icon: <ChatAltIcon className="h-10 w-10"/>, name: "Egyedi igények kezelése", text: lorem},
+  { icon: <CreditCardIcon className="h-10 w-10" />, name: "Legjobb ajánlatok egy helyen", text: lorem },
+  { icon: <InformationCircleIcon className="h-10 w-10" />, name: "Segítőkész kiszolgálás", text: lorem  },
   { icon: <ClockIcon className="h-10 w-10" />, name: "Több mint 25 év tapasztalat", text: lorem },
 
 ];
