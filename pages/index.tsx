@@ -10,7 +10,7 @@ import ExtraCards from "../components/ExtraCards";
 import Footer from "../components/Footer";
 import IconCard from "../components/IconCard";
 import ImageSmallGallery from "../components/ImageSmallGallery";
-
+import Script from 'next/script'
 import NavbarTwo from "../components/NavbarTwo";
 import SearchBar from "../components/SearchBar";
 import YourNextTourCard from "../components/YourNextTourCard";
@@ -43,6 +43,22 @@ export default function Home() {
 
   return (
     <>
+      <div className="container">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-C9YQXT5SMH"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-C9YQXT5SMH');
+
+        `}
+      </Script>
+    </div>
       <motion.div
         initial={{ opacity: 100 }}
         transition={{ duration: 3 }}
