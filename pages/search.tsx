@@ -14,7 +14,10 @@ export default function Search() {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState<any>([]);
 
-
+  let country2 :any = router.query.country;
+  let startDate:any  = router.query.start;
+  let endDate:any  = router.query.end;
+  console.log(country2,startDate,endDate)
 
   useEffect(() => {
 
@@ -22,6 +25,8 @@ export default function Search() {
     country ? queryparams += 'country='+country: null ;
     start ?  queryparams += '&start='+start : null ;
     end ?  queryparams += '&end='+end : null ;
+
+
     if (router.query) {
       
       const { country } = router.query;
@@ -34,8 +39,8 @@ export default function Search() {
         }
       ).then((tourResults) =>
         tourResults.json().then((data) => {
-          console.log("DataSearch: ", data);
-          setTours(data.tours);
+          console.log("DataSearch: ", data.search_result);
+          setTours(data.search_result);
         })
       );
     }
@@ -57,7 +62,9 @@ export default function Search() {
         loader
       ) : (
         <>
-          <Navbar title='Keresd meg a legjobb utazást Velünk.' text='' /> <SearchBar  /> <CardTwo tours={tours}/>
+          <Navbar title='Keresd meg a legjobb utazást Velünk.' text='' /> 
+          <SearchBar  />
+           <CardTwo tours={tours}/>
         </>
       )}
     </>

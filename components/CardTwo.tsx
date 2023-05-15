@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function CardTwo(props :any) {
+export default function CardTwo({tours}:any):any {
   const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
     date1 = new Date(date1);
     date2 = new Date(date2);
@@ -22,10 +22,9 @@ export default function CardTwo(props :any) {
     minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 rounded-lg  mt-44 px-10 my-24 ">
-      {props.tours?.map((x: any, i: number) => {
+      {tours?.map((x: any, i: number) => {
         return (
           <div
             key={i}
@@ -33,31 +32,31 @@ export default function CardTwo(props :any) {
           >
             <img
               className="w-full sm:w-1/2 object-center object-cover h-80  rounded-l-2xl "
-              src={x.tourPhotos[0]}
+              src={x?.photos[0]}
             />
 
             <div className="w-full sm:w-1/2 h-80   rounded-tr-3xl flex  flex-col p-5  space-y-4">
-              <p className="font-bold text-3xl text-orange-400">{x.tourTitle}</p>
+              <p className="font-bold text-3xl text-orange-400">{x.title}</p>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-3 text-blue-400 font-bold ">
                   <ClockIcon className="w-5 h-5 " />{" "}
                   <p>
                     {getDayDifferenceBetweenTwoDates(
-                      x.startDates[0],
-                      x.endDates[0]
+                      x?.dates[0]?.start,
+                      x?.dates[0]?.end
                     )} nap
                   </p>
                   <MoonIcon className="w-5 h-5 " />{" "}
                   <p>
                     {getDayDifferenceBetweenTwoDates(
-                      x.startDates[0],
-                      x.endDates[0]
+                          x?.dates[0]?.start,
+                          x?.dates[0]?.end
                     ) - 1} éjszaka
                   </p>
                 </div>
               </div>
               <p className="text-md text-gray-500">
-                {x.tourCountries.join(" - ")}
+                {x.countries.join(" - ")}
               </p>
               <p className="text-2xl font-semibold">
                 {formatter.format(x.priceFrom)} -tól 

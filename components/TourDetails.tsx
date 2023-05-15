@@ -33,7 +33,7 @@ const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
   return diffDays;
 };
 
-export default function TourDetails({ TourDetails }: any) {
+export default function TourDetails({ tour }: any) {
   let formatter = new Intl.NumberFormat("hu-HU", {
     style: "currency",
     currency: "HUF",
@@ -42,7 +42,6 @@ export default function TourDetails({ TourDetails }: any) {
   });
 
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-
   return (
     <div className="  ">
    
@@ -61,7 +60,7 @@ export default function TourDetails({ TourDetails }: any) {
                       thumbs={{ swiper: thumbsSwiper }}
                       className=""
                     >
-                      {TourDetails?.tourPhotos?.map((x: any, i: any) => {
+                      {tour?.photos?.map((x: any, i: any) => {
                         return (
                           <SwiperSlide key={x._id}>
                             <a href={x}>
@@ -85,7 +84,7 @@ export default function TourDetails({ TourDetails }: any) {
                   watchSlidesProgress={true}
                   className=""
                 >
-                  {TourDetails?.tourPhotos?.map((x: any) => {
+                  {tour?.photos?.map((x: any) => {
                     return (
                       <SwiperSlide key={x._id} className=" w-28 min-w-[100px]">
                         <img
@@ -99,15 +98,15 @@ export default function TourDetails({ TourDetails }: any) {
               </div>
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col" >
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                {TourDetails.tourCountries.join(' - ')}
+                {tour?.countries?.join(' - ')}
                 </h2>
                 <h1 className=" text-4xl title-font font-bold mb-1 text-orange-500">
-                {TourDetails.tourTitle}
+                {tour?.title}
                 </h1>
                 <div className="flex mb-4">
               
                 <p className="leading-relaxed">
-                 {TourDetails.TourDetails}
+                 {tour?.tour}
                 </p>
                 </div>
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
@@ -125,7 +124,7 @@ export default function TourDetails({ TourDetails }: any) {
 
                 <div className="flex justify-between">
                   <span className="title-font font-medium text-2xl text-gray-900">
-                  {formatter.format(TourDetails.priceFrom)} -tól
+                  {formatter.format(tour.priceFrom)} -tól
                   </span>
                   <a href='tel:+36 50 117 1026' className="flex items-center justify-center p-4 border-2 border-orange-300 text-white text-3xl rounded-br-2xl bg-orange-400 hover:text-white hover:scale-125 transition cursor-pointer">+36 50 117 10 26</a>
 
@@ -133,8 +132,9 @@ export default function TourDetails({ TourDetails }: any) {
               </div>
             </div>
           </div>
-                  <div className="mx-24" dangerouslySetInnerHTML={{ __html:   TourDetails.tourDescriptions }} />
-                  <div className="mx-24" dangerouslySetInnerHTML={{ __html:   TourDetails.tourSpecialInfos }} />
+
+          <div className="mx-52" dangerouslySetInnerHTML={{ __html:   tour.descriptions }} />
+          {/* <div className="mx-24" dangerouslySetInnerHTML={{ __html:   tour.tourSpecialInfos }} /> */}
         </section>
 
         </div>

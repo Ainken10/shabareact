@@ -1,97 +1,61 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
-import dbConnect from "../../lib/mongodb";
-import Tours from "../../models/tour";
+import type { NextApiRequest, NextApiResponse } from 'next'
+import Post from "../../models/Post";
+import { connectToDatabase } from '../../lib/mongodb2';
 
-export default async function handler(req: NextApiRequest, res: any) {
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<any>
+) {
+
   try {
+    console.log('Search started')
+    let country :any = req.query.country;
+    let startDate:any  = req.query.start;
+    let endDate:any  = req.query.end;
+    let query :any = {};
 
-    let orszag = req.query.country;
-    let erkezesidatum = req.query.start;
-    let indulasidatum = req.query.end;
+    if (country) {
+      query.countries = country;
+    }
 
-    // console.log("queries: ",orszag," ",erkezesidatum," ",indulasidatum )
 
-    // let query = { tourCountries: { $in: [orszag] },"tourPhotos.0": { $exists: true } };
-  
-    // if (
-    //   (indulasidatum == "" || indulasidatum === undefined) &&
-    //   (erkezesidatum == "" || indulasidatum === erkezesidatum)
-    // ) {
-    //   query = { tourCountries: { $in: [orszag] }, "tourPhotos.0": { $exists: true } };
-      
-    // } else if (
-    //   indulasidatum != "" &&
-    //   indulasidatum != undefined &&
-    //   (erkezesidatum == "" || indulasidatum === erkezesidatum)
-    // ) {
-    //   query = {
-    //     tourCountries: { $in: [orszag] },
-    //     starDates: { $in: [indulasidatum] },
-    //     "tourPhotos.0": { $exists: true }
-    //   };
-    // } else if (
-    //   erkezesidatum != "" &&
-    //   erkezesidatum != undefined &&
-    //   (indulasidatum == "" || indulasidatum === undefined)
-    // ) {
-    //   query = {
-    //     "tourCountries": { $in: [orszag] },
-       
-    //     "tourPhotos.0": { $exists: true }
-    //     "endDates": { $in: [erkezesidatum]  },
-    //   };
-    // } else if (
-    //   erkezesidatum != "" &&
-    //   erkezesidatum != undefined &&
-    //   indulasidatum != "" &&
-    //   indulasidatum != undefined
-    // ) {
-    //   query = {
-    //     tourCountries: { $in: [orszag] {,
-    //     endDates: { $in: [erkezesidatum] },
-    //     starDates: { $in: [indulasidatum] },
-    //     "tourPhotos.0": { $exists: true }
-    //   };
-    // }
+    if (startDate && endDate) {
+      console.log('state: start/end')
+      var dateToCheck = {
+        start:startDate,
+        end:endDate
+      }
+      query.dates = {
+        $elemMatch: dateToCheck
+      };
 
-    const query :any= {
-      tourCountries:{},
-      // endDates:{},
-      starDates: { $exists: true, $ne: [] } ,
-      "tourPhotos.0":{ $exists: true },
-   
-     };
+    } else if(startDate) {
+      console.log('state: start')
+      query.dates = {
+        $elemMatch: {
+          start: { $eq: startDate },
+        }
+      };
+    }
+    else if(endDate) {
+      console.log('state: end')
+      query.dates = {
+        $elemMatch: {
+          end: { $eq: endDate },
+        }
+      };
+    }
+    console.log('query:',query)
+    const { db } = await connectToDatabase();
+    const search_result = await db.collection('posts').find(query).toArray();
 
-     const tourCountries = req.query.country ? {tourCountries: { $in: [req.query.country] }} : {};
-     const endDates = req.query.end ? {endDates: { $in: [req.query.end] }  }: {  };
-     const starDates = req.query.start ? {startDates: { $in: [req.query.start] }  }: {startDates: { $exists: true, $not: {$size: 0} }};
-     const tourPhotos = { "tourPhotos.0":{ $exists: true }};
-
-    query.tourCountries = { $in: [orszag] };
-    // query.endDates = { $in: [erkezesidatum] };
-    // query.starDates = { $in: [indulasidatum] };
-     query.tourCountries = { $exists: true };
-     console.log("hello",{...tourCountries, ...starDates, ...endDates, ...tourPhotos})
-    // connect to the database
-    const db = await dbConnect();
-    // fetch the posts
-    const tours = await Tours.find({...tourCountries, ...starDates, ...endDates, ...tourPhotos})
-      .lean()
-      .select("tourPhotos")
-      .select("tourTitle")
-      .select("endDates")
-      .select("tourCountries")
-      .select("startDates")
-      .select("priceFrom")
-      
-    console.log(tours)
-    console.log({...tourCountries, ...starDates, ...endDates, ...tourPhotos})
-    return res.status(200).json({ tours });
-    // return the posts
+    // console.log('search_data:',search_result)
+    res.status(200).json({ search_result });
   } catch (error) {
-    // return the error
-    console.log(error);
-    return res.status(400).json({ error: true });
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }
+

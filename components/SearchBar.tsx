@@ -1,13 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,memo } from "react";
 import Router from "next/router";
-export default function SearchBar() {
+import { useRouter } from "next/router";
+const SearchBar = memo(() => {
+
+  const router = useRouter();
+  let country2 :any = router.query.country;
+  let startDate:any  = router.query.start;
+  let endDate:any  = router.query.end;
+
+  const [selectedStartDate, setStartDate] = useState(startDate ?? startDate);
+  const [selectEdendDate, setEndDate] = useState(endDate ?? endDate);
+  const [selectedCountry, setSelectedCountry] = useState(country2 ?? country2);
+
+  const handleStartDateChange = (event:any):any => {
+    setStartDate(event.target.value);
+  };
+  const handleEndDateChange = (event:any):any => {
+    setEndDate(event.target.value);
+  };
+  const handleCountryDateChange = (event:any):any => {
+    setSelectedCountry(event.target.value);
+  };
+
+
   const [countries, setCountries] = useState<any>([]);
   useEffect(() => {
     const res = fetch("/api/countries", {
       method: "GET",
     }).then((tourResults) =>
       tourResults.json().then((data) => {
-        console.log("search :",data)
         setCountries(data.countries);
       })
     );
@@ -32,6 +53,7 @@ export default function SearchBar() {
 
     Router.push(queryparams);
   };
+
   return (
     <form
       onSubmit={(e) => searchInTours(e)}
@@ -48,6 +70,8 @@ export default function SearchBar() {
           <select
             name="country"
             id="country"
+            onChange={handleCountryDateChange}
+            value={selectedCountry}
             autoComplete="address-level2"
             className="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
           >
@@ -72,6 +96,8 @@ export default function SearchBar() {
             type="date"
             name="start"
             id="start"
+            value={selectedStartDate} 
+            onChange={handleStartDateChange}
             autoComplete="address-level1"
             className="mt-1 p-2  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
           />
@@ -88,6 +114,8 @@ export default function SearchBar() {
             type="date"
             name="end"
             id="end"
+            value={selectEdendDate} 
+            onChange={handleEndDateChange}
             className="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
           />
         </div>
@@ -102,4 +130,6 @@ export default function SearchBar() {
       </div>
     </form>
   );
-}
+});
+
+export default SearchBar;

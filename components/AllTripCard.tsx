@@ -39,7 +39,7 @@ const items = [
   },
 ];
 
-export default function AllTripCard() {
+export default function AllTripCard({tours}:any):any  {
   const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
     date1 = new Date(date1);
     date2 = new Date(date2);
@@ -62,21 +62,7 @@ export default function AllTripCard() {
     minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
-  const [tours, setTours] = useState<any>([]);
-  useEffect(() => {
-    const res = fetch("/api/tours?skip=120&limit=4", {
-      method: "GET",
-    }).then((tourResults) =>
-      tourResults.json().then((data) => {
-        console.log("DataBIG2: ", data);
-        setTours(data.tours);
-      })
-    );
 
-    return () => {
-      console.log("clean up");
-    };
-  }, []);
   return (
     <div className="flex items-center justify-center my-40 flex-wrap mx-10 ">
       <div className="w-full flex flex-col my-5 ">
@@ -95,32 +81,32 @@ export default function AllTripCard() {
             >
               <img
                 className="rounded-t-lg max-h-[250px] min-h-[250px] w-full"
-                src={x.tourPhotos[0]}
+                src={x.photos[0]}
               />
               <div className="flex flex-col p-2 h-[150px] justify-between w- group-hover:bg-orange-400 group-hover:text-white">
-                <p className="text-2xl font-bold">{x.tourTitle}</p>
+                <p className="text-2xl font-bold">{x.title}</p>
                 <div className="flex flex-col ">
 
                   {  getDayDifferenceBetweenTwoDates(
-                        x.startDates[0],
-                        tours[0]?.endDates[0]
+                        x.dates[0].start,
+                        x.dates[0].end
                       ) > 0 ?     <div className="flex items-center  space-x-1   rounded-lg">
                       <ClockIcon className="w-5 h-5 " />{" "}
                       <p>
                         {" "}
                         {getDayDifferenceBetweenTwoDates(
-                          x.startDates[0],
-                          tours[0]?.endDates[0]
-                        )}{" "}
+                            x.dates[0].start,
+                            x.dates[0].end
+                        )+1}{" "}
                         nap
                       </p>
                       <MoonIcon className="w-5 h-5 " />{" "}
                       <p>
                         {" "}
                         {getDayDifferenceBetweenTwoDates(
-                          x.startDates[0],
-                          tours[0]?.endDates[0]
-                        ) - 1}{" "}
+                        x.dates[0].start,
+                        x.dates[0].end
+                        ) }{" "}
                         éjszaka
                       </p>
                     </div> : <p className="text-orange-400">Több információért kérem kattitson</p> }

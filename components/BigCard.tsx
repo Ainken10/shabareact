@@ -1,7 +1,7 @@
 import { ClockIcon, MoonIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 
-export default function BigCard() {
+export default function BigCard( {tours}:any):any  {
   const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
     date1 = new Date(date1)
     date2 = new Date(date2)
@@ -19,38 +19,25 @@ export default function BigCard() {
     maximumFractionDigits: 0,
   
   });
-  const [tours, setTours] = useState<any>([]);
-  useEffect(() => {
-    const res = fetch("/api/getsingletour?key=Montenegro", {
-      method: "GET",
-    }).then((tourResults) =>
-      tourResults.json().then((data) => {
-        console.log("DataBIG: ", data);
-        setTours(data.tours);
-      })
-    );
 
-    return () => {
-      console.log("clean up");
-    };
-  }, []);
+ 
   return (
     <div className="w-full mt-44  ">
      
-      <div key={tours[0]?.tourTitle} className="relative w-full flex  ">
+      <div key={tours[0]?.title} className="relative w-full flex  ">
         <img
           className="w-full sm:w-4/5 h-[680px] object-cover  sm:rounded-r-3xl"
-          src={tours[0]?.tourPhotos[4]}
+          src={tours[0]?.photos[1]}
         />
         <div className="absolute  first-line:z-20 right-0 h-96 bg-orange-300 w-full sm:w-2/5 rounded-bl-3xl p-10">
           <div className="flex flex-col">
             <div className="flex items-center w-72 justify-center space-x-3 text-orange-300 font-bold p-2 bg-white rounded-lg mb-8">
-              <ClockIcon className="w-5 h-5 " /> <p>{ getDayDifferenceBetweenTwoDates(tours[0]?.startDates[0],tours[0]?.endDates[0] )} nap</p>
-              <MoonIcon className="w-5 h-5 " /> <p>{ getDayDifferenceBetweenTwoDates(tours[0]?.startDates[0],tours[0]?.endDates[0] )-1} éjszaka</p>
+              <ClockIcon className="w-5 h-5 " /> <p>{ getDayDifferenceBetweenTwoDates(tours[0]?.dates[0].start,tours[0]?.dates[0].end)+1} nap</p>
+              <MoonIcon className="w-5 h-5 " /> <p>{ getDayDifferenceBetweenTwoDates(tours[0]?.dates[0].start, tours[0]?.dates[0].end )} éjszaka</p>
             </div>
           </div>
-          <p className="text-white font-bold text-3xl mb-3">{tours[0]?.tourTitle}</p>
-          <p className="text-white  ">{tours[0]?.tourCountries.join(" ")}</p>
+          <p className="text-white font-bold text-3xl mb-3">{tours[0]?.title}</p>
+          <p className="text-white  ">{tours[0]?.countries.join(" ")}</p>
           <p className="text-white  ">{formatter.format(tours[0]?.priceFrom)} -tól</p>
           <div className="w-full flex  space-x-5 my-5">
             <a

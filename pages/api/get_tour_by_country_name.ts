@@ -8,12 +8,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  console.log('hello api');
-  const desiredCountry = 'Olaszország';
-
+  const countryName = req.query.country;
+  const limit:number = parseInt(req.query.limit.toString());
   try {
     const { db } = await connectToDatabase();
-    const olaszorszag = await db.collection('posts').find({ countries: desiredCountry }).limit(10).toArray();
+    const olaszorszag = await db.collection('posts').find({ countries: countryName }).limit(limit).toArray();
 
     res.status(200).json({ olaszorszag });
   } catch (error) {

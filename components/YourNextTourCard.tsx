@@ -9,7 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 
 
-export default function YourNextTourCard() {
+export default function YourNextTourCard({tours}:any):any  {
   const getDayDifferenceBetweenTwoDates = (date1: any, date2: any) => {
     date1 = new Date(date1);
     date2 = new Date(date2);
@@ -26,27 +26,10 @@ export default function YourNextTourCard() {
     minimumFractionDigits :0,
     maximumFractionDigits: 0,
   });
-  const [tours, setTours] = useState<any>([]);
-  useEffect(() => {
-    const res = fetch("/api/tours?skip=4&limit=1", {
-      method: "GET",
-    }).then((tourResults) =>
-      tourResults.json().then((data) => {
-        console.log("DataBIG2: ", data);
-        setTours(data.tours);
-      })
-    );
 
-    return () => {
-      console.log("clean up");
-    };
-  }, []);
   return (
-    <>
-      {tours?.map((x: any, i: any) => {
-        return (
+
           <div
-            key={i}
             className="w-full mt-44 flex flex-col justify-center items-center my-40 px-5 sm:px-20"
           >
             <div className="w-full flex flex-col my-5">
@@ -58,7 +41,7 @@ export default function YourNextTourCard() {
             <div className="w-full h-96 mx-32 relative">
               <img
                 className="w-full h-[500px] object-cover rounded-2xl absolute -z-10  "
-                src={x.tourPhotos[0]}
+                src={tours[0]?.photos[1]}
               />
               <div className="flex flex-col space-y-4 sm:my-12 sm:mx-16 sm:h-[340px] w-full sm:w-[766px]  rounded-2xl sm:bg-white p-10">
                 <div className="flex flex-col">
@@ -67,8 +50,8 @@ export default function YourNextTourCard() {
                     <p>
                       {" "}
                       {getDayDifferenceBetweenTwoDates(
-                        x.startDates[0],
-                        tours[0]?.endDates[0]
+                        tours[0]?.dates[0]?.start,
+                        tours[0]?.dates[0]?.end,
                       )}{" "}
                       nap
                     </p>
@@ -76,18 +59,18 @@ export default function YourNextTourCard() {
                     <p>
                       {" "}
                       {getDayDifferenceBetweenTwoDates(
-                        x.startDates[0],
-                        tours[0]?.endDates[0]
+                         tours[0]?.dates[0]?.start,
+                         tours[0]?.dates[0]?.end,
                       ) - 1}{" "}
                       éjszaka
                     </p>
                   </div>
                 </div>
-                <p className="text-2xl font-bold">{x.tourTitle}</p>
-                <p className="text-lg">{x.tourCountries.join(" - ")}</p>
+                <p className="text-2xl font-bold">{tours[0]?.title}</p>
+                <p className="text-lg">{tours[0]?.countries.join(" - ")}</p>
                 <p className="font-semibold text-2xl">
                
-                  {formatter.format(x.priceFrom)}
+                  {formatter.format(tours[0]?.priceFrom)}
                 </p>
                 <div className="w-full flex  space-x-5 my-5">
                   <a
@@ -107,7 +90,4 @@ export default function YourNextTourCard() {
             </div>
           </div>
         );
-      })}
-    </>
-  );
 }

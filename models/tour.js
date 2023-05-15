@@ -30,41 +30,5 @@ const tourSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-// const tourInfoSchema = new mongoose.Schema({
-//   ref: mongoose.ObjectId,
-//   dateStart: String,
-//   dateEnd: String,
-//   price: Number,
-//   pricePlus:String,
-//   type:String,
-//   tourTypeName:String,
-//   in: [],
-//   out: [],
-//   roomConfig:{
-//     code: String,
-//     capacity: String,
-//     minAdults: String,
-//     maxAdults: String,
-//     minChildren: String,
-//     maxChildren: String,
-//   },
-
-//   flightInfo:{
-//     fromDepartureAirport:String,
-//     fromDepartureAirportTime:Date,
-//     toDepartureAirport:String,
-//     toDepartureAirportTime:Date,
-    
-//     backFromDepartureAirport:String,
-//     backFromDepartureAirportTime:Date,
-//     backToDepartureAirport:String,
-//     backToDepartureAirportTime:Date,
-//   }
-// }, { timestamps: true });
-
-
-
-// const Tours = mongoose.model('tours', tourSchema);
-// const TourInfo = mongoose.model('tourInfo', tourInfoSchema);
 
 module.exports = mongoose.models.Tours || mongoose.model('Tours', tourSchema)

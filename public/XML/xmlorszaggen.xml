@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<countries generated="2023-01-17 06:02:02" generator="1.2" count="182">
+<country id="1">
+<name><![CDATA[Franciaország]]></name>
+</country>
+<country id="2">
+<name><![CDATA[Németország]]></name>
+</country>
+<country id="3">
+<name><![CDATA[Svájc]]></name>
+</country>
+<country id="4">
+<name><![CDATA[Belgium]]></name>
+</country>
+<country id="5">
+<name><![CDATA[Horvátország]]></name>
+</country>
+<country id="6">
+<name><![CDATA[Olaszország]]></name>
+</country>
+<country id="7">
+<name><![CDATA[Spanyolország]]></name>
+</country>
+<country id="8">
+<name><![CDATA[Bulgária]]></name>
+</country>
+<country id="9">
+<name><![CDATA[Ciprus]]></name>
+</country>
+<country id="10">
+<name><![CDATA[Görögország]]></name>
+</country>
+<country id="11">
+<name><![CDATA[Málta]]></name>
+</country>
+<country id="12">
+<name><![CDATA[Bosznia- Hercegovina]]></name>
+</country>
+<country id="13">
+<name><![CDATA[Portugália]]></name>
+</country>
+<country id="15">
+<name><![CDATA[Törökország]]></name>
+</country>
+<country id="16">
+<name><![CDATA[Szlovákia]]></name>
+</country>
+<country id="17">
+<name><![CDATA[Ausztria]]></name>
+</country>
+<country id="18">
+<name><![CDATA[Szlovénia]]></name>
+</country>
+<country id="19">
+<name><![CDATA[Csehország]]></name>
+</country>
+<country id="20">
+<name><![CDATA[Románia]]></name>
+</country>
+<country id="21">
+<name><![CDATA[Argentína]]></name>
+</country>
+<country id="23">
+<name><![CDATA[Bolívia]]></name>
+</country>
+<country id="24">
+<name><![CDATA[Brazília]]></name>
+</country>
+<country id="25">
+<name><![CDATA[Chile]]></name>
+</country>
+<country id="26">
+<name><![CDATA[Ecuador]]></name>
+</country>
+<country id="27">
+<name><![CDATA[Falkland- szigetek(Malvinas)]]></name>
+</country>
+<country id="28">
+<name><![CDATA[Francia Guyana]]></name>
+</country>
+<country id="29">
+<name><![CDATA[Guyana]]></name>
+</country>
+<country id="30">
+<name><![CDATA[Kolumbia]]></name>
+</country>
+<country id="31">
+<name><![CDATA[Paraguay]]></name>
+</country>
+<country id="32">
+<name><![CDATA[Peru]]></name>
+</country>
+<country id="33">
+<name><![CDATA[Suriname]]></name>
+</country>
+<country id="34">
+<name><![CDATA[Uruguay]]></name>
+</country>
+<country id="35">
+<name><![CDATA[Venezuela]]></name>
+</country>
+<country id="37">
+<name><![CDATA[Belize]]></name>
+</country>
+<country id="39">
+<name><![CDATA[Brit Virgin- szigetek.]]></name>
+</country>
+<country id="40">
+<name><![CDATA[Costa Rica]]></name>
+</country>
+<country id="41">
+<name><![CDATA[Dominikai Köztársaság]]></name>
+</country>
+<country id="42">
+<name><![CDATA[El Salvador]]></name>
+</country>
+<country id="43">
+<name><![CDATA[Grenada]]></name>
+</country>
+<country id="44">
+<name><![CDATA[Guatemala]]></name>
+</country>
+<country id="45">
+<name><![CDATA[Haiti]]></name>
+</country>
+<country id="46">
+<name><![CDATA[Holland Antillák (ABC-szigetek)]]></name>
+</country>
+<country id="47">
+<name><![CDATA[Honduras]]></name>
+</country>
+<country id="48">
+<name><![CDATA[Jamaika]]></name>
+</country>
+<country id="49">
+<name><![CDATA[Kajmán- szigetek(GBr.)]]></name>
+</country>
+<country id="50">
+<name><![CDATA[Karib-szigetek]]></name>
+</country>
+<country id="51">
+<name><![CDATA[Kuba]]></name>
+</country>
+<country id="52">
+<name><![CDATA[Mexikó]]></name>
+</country>
+<country id="53">
+<name><![CDATA[Montserrat]]></name>
+</country>
+<country id="54">
+<name><![CDATA[Nicaragua]]></name>
+</country>
+<country id="55">
+<name><![CDATA[Panama]]></name>
+</country>
+<country id="56">
+<name><![CDATA[Puerto Rico]]></name>
+</country>
+<country id="57">
+<name><![CDATA[Saint Kitts és Nevis]]></name>
+</country>
+<country id="58">
+<name><![CDATA[Saint Vincent]]></name>
+</country>
+<country id="59">
+<name><![CDATA[Trinidad és Tobago]]></name>
+</country>
+<country id="60">
+<name><![CDATA[Amerikai Egyesült Államok]]></name>
+</country>
+<country id="61">
+<name><![CDATA[Bermuda(NBr.)]]></name>
+</country>
+<country id="62">
+<name><![CDATA[Kanada]]></name>
+</country>
+<country id="63">
+<name><![CDATA[Ukrajna]]></name>
+</country>
+<country id="64">
+<name><![CDATA[Oroszország]]></name>
+</country>
+<country id="65">
+<name><![CDATA[Lengyelország]]></name>
+</country>
+<country id="68">
+<name><![CDATA[Nagy-Britannia]]></name>
+</country>
+<country id="69">
+<name><![CDATA[Írország]]></name>
+</country>
+<country id="70">
+<name><![CDATA[Izland]]></name>
+</country>
+<country id="71">
+<name><![CDATA[Francia Polinézia]]></name>
+</country>
+<country id="72">
+<name><![CDATA[Vietnám]]></name>
+</country>
+<country id="73">
+<name><![CDATA[Dánia]]></name>
+</country>
+<country id="74">
+<name><![CDATA[Svédország]]></name>
+</country>
+<country id="75">
+<name><![CDATA[Marokkó]]></name>
+</country>
+<country id="76">
+<name><![CDATA[Namíbia]]></name>
+</country>
+<country id="77">
+<name><![CDATA[Finnország]]></name>
+</country>
+<country id="78">
+<name><![CDATA[India]]></name>
+</country>
+<country id="79">
+<name><![CDATA[Albánia]]></name>
+</country>
+<country id="80">
+<name><![CDATA[Ausztrália]]></name>
+</country>
+<country id="81">
+<name><![CDATA[Egyiptom]]></name>
+</country>
+<country id="82">
+<name><![CDATA[Egyesült Arab Emirátusok]]></name>
+</country>
+<country id="83">
+<name><![CDATA[Bahrain]]></name>
+</country>
+<country id="84">
+<name><![CDATA[Jordánia]]></name>
+</country>
+<country id="85">
+<name><![CDATA[Kína]]></name>
+</country>
+<country id="86">
+<name><![CDATA[Tunézia]]></name>
+</country>
+<country id="87">
+<name><![CDATA[Norvégia]]></name>
+</country>
+<country id="88">
+<name><![CDATA[Etiópia]]></name>
+</country>
+<country id="89">
+<name><![CDATA[Szerbia]]></name>
+</country>
+<country id="90">
+<name><![CDATA[Indonézia]]></name>
+</country>
+<country id="91">
+<name><![CDATA[Sri Lanka]]></name>
+</country>
+<country id="92">
+<name><![CDATA[Japán]]></name>
+</country>
+<country id="93">
+<name><![CDATA[Dél Korea]]></name>
+</country>
+<country id="94">
+<name><![CDATA[Észak Korea]]></name>
+</country>
+<country id="95">
+<name><![CDATA[Libanon]]></name>
+</country>
+<country id="96">
+<name><![CDATA[Litvánia]]></name>
+</country>
+<country id="97">
+<name><![CDATA[Líbia]]></name>
+</country>
+<country id="98">
+<name><![CDATA[Madagaszkár]]></name>
+</country>
+<country id="99">
+<name><![CDATA[Thaiföld]]></name>
+</country>
+<country id="100">
+<name><![CDATA[Maldív-szigetek]]></name>
+</country>
+<country id="101">
+<name><![CDATA[Malajzia]]></name>
+</country>
+<country id="102">
+<name><![CDATA[Nepál]]></name>
+</country>
+<country id="103">
+<name><![CDATA[Lettország]]></name>
+</country>
+<country id="104">
+<name><![CDATA[Észtország]]></name>
+</country>
+<country id="105">
+<name><![CDATA[Szíria]]></name>
+</country>
+<country id="106">
+<name><![CDATA[Uganda]]></name>
+</country>
+<country id="107">
+<name><![CDATA[Jemen]]></name>
+</country>
+<country id="108">
+<name><![CDATA[Dél-Afrikai Köztársaság]]></name>
+</country>
+<country id="109">
+<name><![CDATA[Üzbegisztán]]></name>
+</country>
+<country id="110">
+<name><![CDATA[Hollandia]]></name>
+</country>
+<country id="112">
+<name><![CDATA[Izrael]]></name>
+</country>
+<country id="113">
+<name><![CDATA[Tanzánia]]></name>
+</country>
+<country id="116">
+<name><![CDATA[Tibet]]></name>
+</country>
+<country id="117">
+<name><![CDATA[Kenya]]></name>
+</country>
+<country id="118">
+<name><![CDATA[Luxemburg]]></name>
+</country>
+<country id="126">
+<name><![CDATA[Burma (Mianmar)]]></name>
+</country>
+<country id="128">
+<name><![CDATA[Pakisztán]]></name>
+</country>
+<country id="129">
+<name><![CDATA[Alaszka]]></name>
+</country>
+<country id="130">
+<name><![CDATA[Fülöp-szigetek]]></name>
+</country>
+<country id="131">
+<name><![CDATA[Tajvan]]></name>
+</country>
+<country id="132">
+<name><![CDATA[Magyarország]]></name>
+</country>
+<country id="139">
+<name><![CDATA[Kambodzsa]]></name>
+</country>
+<country id="140">
+<name><![CDATA[Új-Zéland]]></name>
+</country>
+<country id="143">
+<name><![CDATA[Algéria]]></name>
+</country>
+<country id="144">
+<name><![CDATA[Mongólia]]></name>
+</country>
+<country id="145">
+<name><![CDATA[Montenegro]]></name>
+</country>
+<country id="146">
+<name><![CDATA[Húsvét-szigetek (Chile)]]></name>
+</country>
+<country id="148">
+<name><![CDATA[Laosz]]></name>
+</country>
+<country id="149">
+<name><![CDATA[Bahama-szigetek]]></name>
+</country>
+<country id="150">
+<name><![CDATA[Mauritius]]></name>
+</country>
+<country id="151">
+<name><![CDATA[Szingapúr]]></name>
+</country>
+<country id="154">
+<name><![CDATA[Seychelle-szigetek]]></name>
+</country>
+<country id="156">
+<name><![CDATA[Zimbabwe]]></name>
+</country>
+<country id="158">
+<name><![CDATA[Fiji]]></name>
+</country>
+<country id="160">
+<name><![CDATA[Zöld-Foki Köztársaság]]></name>
+</country>
+<country id="161">
+<name><![CDATA[Irán]]></name>
+</country>
+<country id="162">
+<name><![CDATA[Pápua Új-Guinea]]></name>
+</country>
+<country id="163">
+<name><![CDATA[Cook-szigetek]]></name>
+</country>
+<country id="165">
+<name><![CDATA[Salvador]]></name>
+</country>
+<country id="166">
+<name><![CDATA[Zambia]]></name>
+</country>
+<country id="167">
+<name><![CDATA[Vanuatu]]></name>
+</country>
+<country id="168">
+<name><![CDATA[Tonga]]></name>
+</country>
+<country id="169">
+<name><![CDATA[Új-Kaledonia]]></name>
+</country>
+<country id="170">
+<name><![CDATA[Omán Szultánság]]></name>
+</country>
+<country id="171">
+<name><![CDATA[Monaco]]></name>
+</country>
+<country id="172">
+<name><![CDATA[Bhután]]></name>
+</country>
+<country id="173">
+<name><![CDATA[Örményország]]></name>
+</country>
+<country id="174">
+<name><![CDATA[Malawi]]></name>
+</country>
+<country id="176">
+<name><![CDATA[Qatar]]></name>
+</country>
+<country id="177">
+<name><![CDATA[Gambia]]></name>
+</country>
+<country id="178">
+<name><![CDATA[Kamerun]]></name>
+</country>
+<country id="180">
+<name><![CDATA[Antigua és Barbuda]]></name>
+</country>
+<country id="181">
+<name><![CDATA[Gabon]]></name>
+</country>
+<country id="182">
+<name><![CDATA[Botswana]]></name>
+</country>
+<country id="183">
+<name><![CDATA[Szenegál]]></name>
+</country>
+<country id="184">
+<name><![CDATA[Mozambik]]></name>
+</country>
+<country id="185">
+<name><![CDATA[Szváziföld]]></name>
+</country>
+<country id="186">
+<name><![CDATA[Hajóutak]]></name>
+</country>
+<country id="187">
+<name><![CDATA[Mali]]></name>
+</country>
+<country id="188">
+<name><![CDATA[Azerbajdzsán]]></name>
+</country>
+<country id="189">
+<name><![CDATA[Grúzia]]></name>
+</country>
+<country id="190">
+<name><![CDATA[Szaúd-Arábia]]></name>
+</country>
+<country id="191">
+<name><![CDATA[Comore-szigetek]]></name>
+</country>
+<country id="192">
+<name><![CDATA[Brunei]]></name>
+</country>
+<country id="193">
+<name><![CDATA[Palau]]></name>
+</country>
+<country id="194">
+<name><![CDATA[Macedónia]]></name>
+</country>
+<country id="195">
+<name><![CDATA[Türkmenisztán]]></name>
+</country>
+<country id="196">
+<name><![CDATA[aa -azonosításra vár]]></name>
+</country>
+<country id="197">
+<name><![CDATA[Burkina Faso]]></name>
+</country>
+<country id="198">
+<name><![CDATA[Ruanda]]></name>
+</country>
+<country id="199">
+<name><![CDATA[Ghána]]></name>
+</country>
+<country id="200">
+<name><![CDATA[Szikkim]]></name>
+</country>
+<country id="201">
+<name><![CDATA[Kazahsztán]]></name>
+</country>
+<country id="202">
+<name><![CDATA[Kongói Demokratikus Köztársaság]]></name>
+</country>
+<country id="203">
+<name><![CDATA[Kirgizisztán]]></name>
+</country>
+<country id="204">
+<name><![CDATA[Monte-Carlo]]></name>
+</country>
+<country id="205">
+<name><![CDATA[Számoa]]></name>
+</country>
+<country id="206">
+<name><![CDATA[Liechtenstein]]></name>
+</country>
+<country id="207">
+<name><![CDATA[Sportutak]]></name>
+</country>
+<country id="208">
+<name><![CDATA[Észak-Ciprus]]></name>
+</country>
+<country id="210">
+<name><![CDATA[Salamon-szigetek]]></name>
+</country>
+<country id="211">
+<name><![CDATA[Mikronéziai Szövetségi Államok]]></name>
+</country>
+<country id="212">
+<name><![CDATA[Moldova]]></name>
+</country>
+<country id="213">
+<name><![CDATA[Szudán]]></name>
+</country>
+<country id="214">
+<name><![CDATA[Andorra]]></name>
+</country>
+<country id="215">
+<name><![CDATA[Katar]]></name>
+</country>
+<country id="216">
+<name><![CDATA[Koszovó]]></name>
+</country>
+<country id="217">
+<name><![CDATA[Tádzsikisztán]]></name>
+</country>
+</countries>
