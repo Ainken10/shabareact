@@ -36,7 +36,7 @@ export default function YourNextTourCard({tours}:any):any  {
               <p className="font-semibold text-orange-500 text-lg">
                 Tervezze meg a következőt
               </p>
-              <p className="font-bold text-5xl">Nyári kalandját</p>
+              <p className="font-bold text-5xl">Nyári kalandját </p>
             </div>
             <div className="w-full h-96 mx-32 relative">
               <img
