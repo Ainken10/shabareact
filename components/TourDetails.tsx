@@ -126,7 +126,7 @@ export default function TourDetails({ tour }: any) {
                   <span className="title-font font-medium text-2xl text-gray-900">
                   {formatter.format(tour.priceFrom)} -tól
                   </span>
-                  <a href='tel:+36 50 117 1026' className="flex items-center justify-center p-4 border-2 border-orange-300 text-white text-3xl rounded-br-2xl bg-orange-400 hover:text-white hover:scale-125 transition cursor-pointer">+36 50 117 10 26</a>
+                  <a href='tel:+36704319810 ' className="flex items-center justify-center p-4 border-2 border-orange-300 text-white text-3xl rounded-br-2xl bg-orange-400 hover:text-white hover:scale-125 transition cursor-pointer">+36 70 431 9810</a>
 
                 </div>
               </div>

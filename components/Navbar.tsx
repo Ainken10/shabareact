@@ -57,7 +57,7 @@ export default function Navbar({title,text} :any) {
                     </a>
                   ))}
                   <a
-                  href="tel:+36501171026"
+                  href="tel:+36704319810"
                     className="font-medium text-orange-600 hover:text-orange-500"
                   >
                     Kapcsolat
@@ -145,7 +145,7 @@ export default function Navbar({title,text} :any) {
                     href="tel:123123123"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-orange-700 bg-orange-100 hover:bg-orange-200 md:py-4 md:text-lg md:px-10"
                   >
-                    <PhoneIcon className="h-5 w-5 " /> <p>+36 50 117 10 26</p>
+                    <PhoneIcon className="h-5 w-5 " /> <p>+36 70 431 9810</p>
                   </a>
                 </div>
               </div>
